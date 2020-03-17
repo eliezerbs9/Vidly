@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
-using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
-    public class MovieController : Controller
+    public class CustomersController : Controller
     {
+        // GET: Customers
         private MyDBContext _context;
 
-        public MovieController()
+        public CustomersController()
         {
             _context = new MyDBContext();
         }
@@ -21,21 +22,20 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
-        // GET: Movie
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(m => m.Genre).ToList();
-            return View(movies);
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            return View(customers);
         }
 
         public ActionResult Details(int id)
         {
-            var movie = _context.Movies.Include(m => m.Genre).Single(m => m.Id == id);
-            if (movie == null)
+            var customer = _context.Customers.Include(c=>c.MembershipType).SingleOrDefault(c => c.Id == id);
+            if(customer == null)
             {
                 return HttpNotFound();
             }
-            return View(movie);
+            return View(customer);
         }
     }
 }

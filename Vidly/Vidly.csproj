@@ -207,6 +207,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Global.asax.cs">
@@ -224,8 +225,37 @@
     <Compile Include="Migrations\202003142314270_PopulateMembetshipTypes.designer.cs">
       <DependentUpon>202003142314270_PopulateMembetshipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003151923134_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\202003151923134_ApplyAnnotationsToCustomerName.designer.cs">
+      <DependentUpon>202003151923134_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003162114422_AddNameToMembetshipType.cs" />
+    <Compile Include="Migrations\202003162114422_AddNameToMembetshipType.designer.cs">
+      <DependentUpon>202003162114422_AddNameToMembetshipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003162119199_PopulateMembershipTypeName.cs" />
+    <Compile Include="Migrations\202003162119199_PopulateMembershipTypeName.designer.cs">
+      <DependentUpon>202003162119199_PopulateMembershipTypeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003162324438_AddBirthDateToCustomer.cs" />
+    <Compile Include="Migrations\202003162324438_AddBirthDateToCustomer.designer.cs">
+      <DependentUpon>202003162324438_AddBirthDateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003162341085_SetCustomerBirthDateToNullable.cs" />
+    <Compile Include="Migrations\202003162341085_SetCustomerBirthDateToNullable.designer.cs">
+      <DependentUpon>202003162341085_SetCustomerBirthDateToNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003170314532_AddNewAttributesToMovie.cs" />
+    <Compile Include="Migrations\202003170314532_AddNewAttributesToMovie.designer.cs">
+      <DependentUpon>202003170314532_AddNewAttributesToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003170317574_PopulateMovieGenre.cs" />
+    <Compile Include="Migrations\202003170317574_PopulateMovieGenre.designer.cs">
+      <DependentUpon>202003170317574_PopulateMovieGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MyDBContext.cs" />
@@ -271,6 +301,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Movie\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Movie\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -297,6 +332,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003142314270_PopulateMembetshipTypes.resx">
       <DependentUpon>202003142314270_PopulateMembetshipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003151923134_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>202003151923134_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003162114422_AddNameToMembetshipType.resx">
+      <DependentUpon>202003162114422_AddNameToMembetshipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003162119199_PopulateMembershipTypeName.resx">
+      <DependentUpon>202003162119199_PopulateMembershipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003162324438_AddBirthDateToCustomer.resx">
+      <DependentUpon>202003162324438_AddBirthDateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003162341085_SetCustomerBirthDateToNullable.resx">
+      <DependentUpon>202003162341085_SetCustomerBirthDateToNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003170314532_AddNewAttributesToMovie.resx">
+      <DependentUpon>202003170314532_AddNewAttributesToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003170317574_PopulateMovieGenre.resx">
+      <DependentUpon>202003170317574_PopulateMovieGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
