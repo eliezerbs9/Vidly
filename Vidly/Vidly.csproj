@@ -314,6 +314,14 @@
     <Compile Include="Migrations\202003200520015_RemoveRequestedAttributesToCreateUser.designer.cs">
       <DependentUpon>202003200520015_RemoveRequestedAttributesToCreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003211816024_SeedUsers.cs" />
+    <Compile Include="Migrations\202003211816024_SeedUsers.designer.cs">
+      <DependentUpon>202003211816024_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003211910388_AddDrivingLicenseToApplicationUser.cs" />
+    <Compile Include="Migrations\202003211910388_AddDrivingLicenseToApplicationUser.designer.cs">
+      <DependentUpon>202003211910388_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -324,6 +332,7 @@
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MyDBContext.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
@@ -639,7 +648,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Movie\List.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movie\MovieForm.cshtml" />
@@ -671,6 +680,7 @@
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Movie\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -716,6 +726,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003200520015_RemoveRequestedAttributesToCreateUser.resx">
       <DependentUpon>202003200520015_RemoveRequestedAttributesToCreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003211816024_SeedUsers.resx">
+      <DependentUpon>202003211816024_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003211910388_AddDrivingLicenseToApplicationUser.resx">
+      <DependentUpon>202003211910388_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
