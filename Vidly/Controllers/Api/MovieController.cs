@@ -20,7 +20,7 @@ namespace Vidly.Controllers.Api
         }
 
         //GET /api/movies
-        public IEnumerable<MovieDto> GetCustomers()
+        public IEnumerable<MovieDto> GetMovies()
         {
             return _context.Movies
                 .Include(m => m.Genre)
@@ -29,7 +29,7 @@ namespace Vidly.Controllers.Api
         }
 
         //GET /api/customer/1
-        public IHttpActionResult GetCustomer(int id)
+        public IHttpActionResult GetMovie(int id)
         {
             var movie = _context.Movies.ToList().SingleOrDefault(m => m.Id == id);
             if (!ModelState.IsValid)
@@ -39,7 +39,8 @@ namespace Vidly.Controllers.Api
 
         //POST  api/movies
         [HttpPost]
-        public IHttpActionResult CreateCustomer(MovieDto movieDto)
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
@@ -52,7 +53,8 @@ namespace Vidly.Controllers.Api
 
         //PUT /api/movies/1
         [HttpPut]
-        public void UpdateCustomer(int id, MovieDto movieDto)
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        public void UpdateMovie(int id, MovieDto movieDto)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -67,7 +69,8 @@ namespace Vidly.Controllers.Api
 
         //DELETE /api/movies/1
         [HttpDelete]
-        public void DeleteCustomer(int id)
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        public void DeleteMovie(int id)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
